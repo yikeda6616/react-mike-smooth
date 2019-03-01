@@ -1,0 +1,22 @@
+.Background {
+  position: absolute;
+  z-index: -999;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background: $color-black;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(#000, $alpha: 0.7);
+  }
+}

@@ -1,0 +1,61 @@
+.Sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 8%;
+  height: 100%;
+
+  background: transparent;
+  @include mq-sp {
+    display: none;
+  }
+
+  &__social {
+    ul {
+      opacity: 0;
+      animation: 2.5s fadeIn 2s forwards;
+      padding-top: 12rem;
+      align-items: flex-end;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+    li {
+      height: 12rem;
+      width: 70%;
+      text-align: center;
+      @include mq-tb {
+        width: 100%;
+      }
+    }
+    a {
+      display: inline-block;
+      transform: rotate(90deg);
+      font-size: 1.4rem;
+      font-weight: 300;
+      padding: 0.5rem 1rem;
+      position: relative;
+      z-index: 10;
+      text-transform: uppercase;
+      transition: all 0.2s;
+      &:hover {
+        color: $color-black;
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        z-index: -500;
+        width: 0;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: $color-white;
+        transition: all 0.2s;
+      }
+      &:hover:before {
+        content: '';
+        width: 100%;
+      }
+    }
+  }
+}

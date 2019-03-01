@@ -1,0 +1,25 @@
+.Track {
+  cursor: pointer;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  @include mq-tb {
+    padding: 1rem 0;
+  }
+  &__image {
+    width: 10rem;
+    height: 10rem;
+    margin-right: 2rem;
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+  }
+  &__detail {
+    p {
+      font-size: 1.4rem;
+    }
+  }
+}

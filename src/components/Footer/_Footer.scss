@@ -1,0 +1,60 @@
+.Footer {
+  opacity: 0;
+  animation: 1s fadeIn 2s forwards;
+  position: fixed;
+  bottom: 2rem;
+  left: 4rem;
+  width: 50%;
+  background: transparent;
+  h4 {
+    transform: translateY(1.2rem);
+    font-size: 1.4rem;
+    font-weight: 300;
+    padding-left: 16%;
+    @include mq-sp {
+      font-size: 1.2rem;
+      padding-left: 7.7rem;
+    }
+  }
+  @include mq-tb {
+    width: 100%;
+    bottom: 0;
+    background: $color-black;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.react-h5-audio-player {
+  cursor: pointer;
+  & .flex {
+    background-color: transparent !important;
+  }
+}
+
+.pause-icon {
+  // box-shadow: none !important;
+  box-shadow: #000 7px 0px 0px 0px inset !important;
+}
+
+.toggle-play-button {
+  background-color: transparent !important;
+}
+
+.indicator {
+  background: $color-white !important;
+  width: 15px !important;
+  height: 15px !important;
+}
+
+.time {
+  font-size: 1.2rem;
+}
+
+.progress-bar-wrapper {
+  div {
+    &:first-child {
+      height: 2px !important;
+    }
+  }
+}

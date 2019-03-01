@@ -1,0 +1,76 @@
+// colors
+$color-black: #252525;
+$color-grey: #777;
+$color-white: #fff;
+
+// break points
+$sp-max-width: 500px;
+$tb-max-width: 998px;
+$pc-min-width: 1024px;
+
+// container max width
+$container: 1366px;
+
+@mixin mq-sp($max: $sp-max-width) {
+  @media only screen and (max-width: #{$max}) {
+    @content;
+  }
+}
+@mixin mq-tb($max: $tb-max-width) {
+  @media only screen and (max-width: #{$max}) {
+    @content;
+  }
+}
+@mixin mq-pc($min: $pc-min-width) {
+  @media only screen and (min-width: #{$min}) {
+    @content;
+  }
+}
+
+.fade-enter {
+  opacity: 0;
+  // transform: translateX(100px);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.fade-enter-active {
+  transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+  opacity: 1;
+  // transform: translateX(0px);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.fade-exit {
+  transition: opacity 0.2s ease-in, transform 0.2s ease-in;
+  opacity: 1;
+  // transform: translateX(0px);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  // transform: translateX(100px);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes stretch {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}

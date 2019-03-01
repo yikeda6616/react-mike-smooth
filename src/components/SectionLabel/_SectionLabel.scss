@@ -1,0 +1,43 @@
+.SectionLabel {
+  width: 40%;
+  @include mq-pc {
+    padding-left: 4rem;
+  }
+  @include mq-tb {
+    padding: 4rem;
+  }
+  @include mq-sp {
+    padding: 2rem;
+  }
+  h2 {
+    padding-top: 12rem;
+    font-size: 12rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: relative;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+    @include mq-tb {
+      font-size: 8rem;
+      padding-top: 2rem;
+    }
+    @include mq-sp {
+      font-size: 4.8rem;
+      padding-top: 0;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      top: 160%;
+      left: 0;
+      width: 120%;
+      height: 1px;
+      background: $color-white;
+      animation: stretch 1.5s forwards;
+      @include mq-tb {
+        width: 70%;
+        top: 120%;
+      }
+    }
+  }
+}

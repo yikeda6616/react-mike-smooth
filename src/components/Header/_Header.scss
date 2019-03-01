@@ -1,0 +1,85 @@
+$header-height-pc: 7.2rem;
+$header-height-sp: 5rem;
+
+.Header {
+  display: flex;
+  @include mq-sp {
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__logo {
+    margin: 3rem 6rem;
+    width: 9rem;
+    height: $header-height-pc;
+    @include mq-sp {
+      width: 6rem;
+      height: $header-height-sp;
+      margin: 1rem;
+      text-align: center;
+    }
+    opacity: 0;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    animation: 1s fadeIn 2s forwards;
+  }
+  nav {
+    width: 30%;
+    @include mq-sp {
+      width: 100%;
+    }
+    ul {
+      opacity: 0;
+      animation: 1.5s fadeIn 2s forwards;
+      height: 100%;
+      align-items: center;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      li {
+        line-height: $header-height-pc;
+        @include mq-sp {
+          line-height: $header-height-sp;
+        }
+        a {
+          font-size: 1.4rem;
+          padding: 0.5rem 1rem;
+          font-weight: 300;
+          position: relative;
+          z-index: 10;
+          text-transform: uppercase;
+          transition: all 0.2s;
+          @include mq-pc {
+            &:hover {
+              color: $color-black;
+            }
+            &:before {
+              content: '';
+              position: absolute;
+              z-index: -500;
+              width: 0;
+              height: 100%;
+              top: 0;
+              left: 0;
+              background: $color-white;
+              transition: all 0.2s;
+            }
+            &:hover:before {
+              content: '';
+              width: 100%;
+            }
+          }
+          @include mq-sp {
+            font-size: 12px;
+            padding: 0.5em;
+          }
+        }
+      }
+    }
+  }
+}

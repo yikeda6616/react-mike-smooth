@@ -1,0 +1,59 @@
+.Animation {
+  position: absolute;
+  z-index: -998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+
+  &__inner {
+    width: 30%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include mq-tb {
+      width: 50%;
+    }
+    @include mq-sp {
+      width: 70%;
+      top: 50%;
+    }
+  }
+}
+
+path {
+  stroke: #fff;
+  fill: #fff;
+  stroke-dasharray: 3210;
+  opacity: 10;
+  animation: svgAnimate 2s cubic-bezier(0, 0.2, 1, 0.1);
+}
+
+@keyframes svgAnimate {
+  0% {
+    stroke: #fff;
+    fill: none;
+    stroke-dashoffset: 3210;
+  }
+  30% {
+    opacity: 10;
+    fill: none;
+    stroke-dashoffset: 3210;
+  }
+  90% {
+    fill: rgba(255, 255, 255, 0);
+  }
+  100% {
+    opacity: 10;
+    fill: rgba(255, 255, 255, 1);
+    stroke-dashoffset: 0;
+  }
+}
+
+.st0 {
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 3;
+  stroke-miterlimit: 10;
+}
